@@ -1,4 +1,4 @@
-import 'package:cycas/presentation/widget/custom_app_bar.dart';
+import 'package:cycas/ui/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class MainSellers extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:cycas/presentation/sellers/main/main_sellers.dart';
+import 'package:cycas/ui/sellers/main/main_sellers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
