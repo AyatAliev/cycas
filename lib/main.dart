@@ -1,4 +1,8 @@
+import 'package:cycas/ui/sellers/add/add_sellers.dart';
 import 'package:cycas/ui/sellers/main/main_sellers.dart';
+import 'package:cycas/ui/sellers/sell/sell_sellers.dart';
+import 'package:cycas/ui/sellers/tables/notebook/notebook_sellers.dart';
+import 'package:cycas/ui/sellers/tables/tables_sellers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -17,10 +21,16 @@ class MyApp extends StatelessWidget {
       statusBarColor: Colors.white,
     ));
 
-    return const MaterialApp(
-      title: 'Flutter Demo',
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainSellers(),
+      initialRoute: MainSellers.routeName,
+      routes: {
+        MainSellers.routeName: (BuildContext context) => MainSellers(),
+        TablesSellers.routeName: (BuildContext context) => TablesSellers(),
+        SellSellers.routeName: (BuildContext context) => SellSellers(),
+        AddSellers.routeName: (BuildContext context) => AddSellers(),
+        NotebookSellers.routeName: (BuildContext context) => NotebookSellers(),
+      },
     );
   }
 }
