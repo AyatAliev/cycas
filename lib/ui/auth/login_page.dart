@@ -21,11 +21,11 @@ class LoginPage extends StatelessWidget {
             alignment: Alignment.centerLeft,
             width: double.infinity,
             height: 50,
-            color: Color(0xd3d3d3),
+            color: const Color(0x50d3d3d3),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
             ),
-            child: TextField(
+            child: const TextField(
               keyboardType: TextInputType.name,
               style: TextStyle(
                 color: Colors.black,
@@ -36,11 +36,11 @@ class LoginPage extends StatelessWidget {
             alignment: Alignment.centerLeft,
             width: double.infinity,
             height: 50,
-            color: Color(0xd3d3d3),
+            color: const Color(0x50d3d3d3),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
             ),
-            child: TextField(
+            child: const TextField(
               obscureText: true,
               style: TextStyle(
                 color: Colors.black,
