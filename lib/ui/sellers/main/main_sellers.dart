@@ -1,7 +1,7 @@
 import 'package:cycas/ui/sellers/add/add_sellers.dart';
 import 'package:cycas/ui/sellers/sell/sell_sellers.dart';
 import 'package:cycas/ui/sellers/tables/tables_sellers.dart';
-import 'package:cycas/ui/widget/custom_text_field.dart';
+import 'package:cycas/ui/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class MainSellers extends StatelessWidget {
@@ -72,17 +72,17 @@ class MainSellers extends StatelessWidget {
               ),
             ],
           ),
-          CustomTextField(
+          CustomText(
               text: "Таблицы",
               onTap: () {
                 Navigator.pushNamed(context, TablesSellers.routeName);
               }),
-          CustomTextField(
+          CustomText(
               text: "Продать",
               onTap: () {
                 Navigator.pushNamed(context, SellSellers.routeName);
               }),
-          CustomTextField(
+          CustomText(
             text: "Добавить",
             onTap: () {
               Navigator.pushNamed(context, AddSellers.routeName);

@@ -1,4 +1,4 @@
-import 'package:cycas/ui/widget/custom_text_field.dart';
+import 'package:cycas/ui/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class AddSellers extends StatelessWidget {
@@ -45,13 +45,13 @@ class AddSellers extends StatelessWidget {
               style: TextStyle(fontSize: 36, fontWeight: FontWeight.w500),
             ),
           ),
-          CustomTextField(text: "Ноутбук",onTap: () {
+          CustomText(text: "Ноутбук",onTap: () {
 
           }),
-          CustomTextField(text: "Телефон",onTap: () {
+          CustomText(text: "Телефон",onTap: () {
 
           }),
-          CustomTextField(text: "Акксесуар", onTap: () {
+          CustomText(text: "Акксесуар", onTap: () {
 
           }),
         ],

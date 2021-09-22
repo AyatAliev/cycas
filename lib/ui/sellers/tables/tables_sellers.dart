@@ -1,5 +1,5 @@
 import 'package:cycas/ui/sellers/tables/notebook/notebook_sellers.dart';
-import 'package:cycas/ui/widget/custom_text_field.dart';
+import 'package:cycas/ui/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class TablesSellers extends StatelessWidget {
@@ -46,16 +46,16 @@ class TablesSellers extends StatelessWidget {
               style: TextStyle(fontSize: 36, fontWeight: FontWeight.w500),
             ),
           ),
-          CustomTextField(text: "Ноутбуки",onTap: () {
+          CustomText(text: "Ноутбуки",onTap: () {
           Navigator.pushNamed(context, NotebookSellers.routeName);
           }),
-          CustomTextField(text: "Телефоны",onTap: () {
+          CustomText(text: "Телефоны",onTap: () {
 
           }),
-          CustomTextField(text: "Акксесуары", onTap: () {
+          CustomText(text: "Акксесуары", onTap: () {
 
           }),
-          CustomTextField(text: "Рассрочка", onTap: () {
+          CustomText(text: "Рассрочка", onTap: () {
 
           }),
         ],

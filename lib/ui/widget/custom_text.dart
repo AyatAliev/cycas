@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatelessWidget {
+class CustomText extends StatelessWidget {
   final String text;
   final void Function() onTap;
 
-  const CustomTextField({Key? key, required this.text, required this.onTap}) : super(key: key);
+  const CustomText({Key? key, required this.text, required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
