@@ -24,7 +24,7 @@ class CustomTextField extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 24, horizontal: 24),
                 child: Text(text,
-                    style: TextStyle(color: Colors.black, fontSize: 16,fontWeight: FontWeight.w400)),
+                    style: const TextStyle(color: Colors.black, fontSize: 16,fontWeight: FontWeight.w400)),
               ),
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 24),

@@ -25,11 +25,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: MainSellers.routeName,
       routes: {
-        MainSellers.routeName: (BuildContext context) => MainSellers(),
-        TablesSellers.routeName: (BuildContext context) => TablesSellers(),
-        SellSellers.routeName: (BuildContext context) => SellSellers(),
-        AddSellers.routeName: (BuildContext context) => AddSellers(),
-        NotebookSellers.routeName: (BuildContext context) => NotebookSellers(),
+        MainSellers.routeName: (BuildContext context) => const MainSellers(),
+        TablesSellers.routeName: (BuildContext context) => const TablesSellers(),
+        SellSellers.routeName: (BuildContext context) => const SellSellers(),
+        AddSellers.routeName: (BuildContext context) => const AddSellers(),
+        NotebookSellers.routeName: (BuildContext context) => const NotebookSellers(),
       },
     );
   }

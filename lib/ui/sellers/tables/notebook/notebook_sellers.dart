@@ -1,4 +1,3 @@
-import 'package:cycas/ui/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 class NotebookSellers extends StatelessWidget {
@@ -49,7 +48,10 @@ class NotebookSellers extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 20),
             child: const Text(
               "Ноутбуки",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500,color: Color(0xFF797979)),
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFF797979)),
             ),
           ),
           Expanded(
@@ -61,39 +63,80 @@ class NotebookSellers extends StatelessWidget {
                     shrinkWrap: true,
                     itemCount: 30,
                     itemBuilder: (context, position) {
-                      return GestureDetector(
-                        child: Container(
-                          color: (position % 2 == 0) ? const Color(0x40e9e9e9) : const Color(0xFFF2F2F2),
-                          child: Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 24,vertical: 18),
+                      return Container(
+                        color: (position % 2 == 0)
+                            ? const Color(0x40e9e9e9)
+                            : const Color(0xFFF2F2F2),
+                        child: ExpansionTile(
+                          children: [
+                            Container(
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: const [
+                                          Text("Модель: Asus VivoBook"),
+                                          Text("Приход: 44000 сом"),
+                                          Text("Продажа: 48000 сом")
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: const [
+                                            Text("Видеокарта: GTX1050 4гб"),
+                                            Text("Процессор: I5-10300H"),
+                                            Text("SSD: 512 гб  ОЗУ: 8 гб")
+                                          ])
+                                    ],
+                                  )
+                                ],
+                              ),
+                              margin: const EdgeInsets.symmetric(
+                                  vertical: 18, horizontal: 18),
+                            )
+                          ],
+                          title: Container(
+                            margin: const EdgeInsets.symmetric(
+                                horizontal: 24, vertical: 18),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Row(
                                   children: [
-                                    Text("$position",style: const TextStyle(fontSize: 16,color: Colors.grey,fontWeight: FontWeight.bold)),
+                                    Text("$position",
+                                        style: const TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.bold)),
                                     Container(
                                       alignment: Alignment.centerLeft,
                                       margin: const EdgeInsets.only(left: 8),
                                       child: const Text(
                                         "Lenovo",
                                         style: TextStyle(
-                                            fontSize: 16.0, color: Colors.black),
+                                            fontSize: 16.0,
+                                            color: Colors.black),
                                       ),
                                     ),
                                   ],
                                 ),
                                 Row(
-                                  children: [
-                                    Container(
-                                      child: const Text(
-                                        "29000 сом",
-                                        style: TextStyle(
-                                            fontSize: 16.0, color: Colors.black),
-                                      ),
-                                      margin: const EdgeInsets.only(right: 40),
+                                  children: const [
+                                    Text(
+                                      "29000 cом",
+                                      style: TextStyle(
+                                          fontSize: 16.0, color: Colors.black),
                                     ),
-                                    const Icon(Icons.keyboard_arrow_down_sharp,size: 24),
                                   ],
                                 )
                               ],
