@@ -1,3 +1,4 @@
+import 'package:cycas/ui/auth/authorization.dart';
 import 'package:cycas/ui/sellers/add/add_sellers.dart';
 import 'package:cycas/ui/sellers/main/main_sellers.dart';
 import 'package:cycas/ui/sellers/sell/sell_sellers.dart';
@@ -23,13 +24,14 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: MainSellers.routeName,
+      initialRoute: Authorization.routeName,
       routes: {
         MainSellers.routeName: (BuildContext context) => const MainSellers(),
         TablesSellers.routeName: (BuildContext context) => const TablesSellers(),
         SellSellers.routeName: (BuildContext context) => const SellSellers(),
         AddSellers.routeName: (BuildContext context) => const AddSellers(),
         NotebookSellers.routeName: (BuildContext context) => const NotebookSellers(),
+        Authorization.routeName: (BuildContext context) => const Authorization(),
       },
     );
   }
