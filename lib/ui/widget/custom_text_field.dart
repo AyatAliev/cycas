@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CustomEdiTextField extends StatelessWidget {
+class CustomTextField extends StatelessWidget {
   final String hintText;
   final TextInputType inputType;
+  final TextEditingController textController;
 
-  const CustomEdiTextField({Key? key, required this.hintText, required this.inputType}) : super(key: key);
+  const CustomTextField({Key? key, required this.hintText, required this.inputType, required this.textController}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +21,7 @@ class CustomEdiTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(4),
         ),
         child: TextField(
+          controller: textController,
           decoration: InputDecoration(
             border: InputBorder.none,
             hintText: hintText,
