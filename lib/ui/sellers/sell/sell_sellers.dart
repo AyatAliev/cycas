@@ -1,3 +1,4 @@
+import 'package:cycas/ui/sellers/sell/sell_notebook_sellers.dart';
 import 'package:cycas/ui/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 
@@ -46,7 +47,7 @@ class SellSellers extends StatelessWidget {
             ),
           ),
           CustomText(text: "Ноутбук", onTap: () {
-
+          Navigator.pushNamed(context, SellNotebookSellers.routeName);
           }),
           CustomText(text: "Телефон", onTap: () {
 

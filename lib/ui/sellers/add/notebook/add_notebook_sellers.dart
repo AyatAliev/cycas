@@ -49,7 +49,7 @@ class AddNotebookSellers extends StatelessWidget {
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 20),
             child: const Text(
-              "Ноутбуки",
+              "Ноутбук",
               style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,

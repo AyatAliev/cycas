@@ -26,7 +26,7 @@ class CustomTextField extends StatelessWidget {
           controller: textController,
           decoration: InputDecoration(
             border: InputBorder.none,
-            hintText: hintText,
+            labelText: hintText,
             hintStyle: const TextStyle(
               color: Color(0xFF707070)
             )
