@@ -5,8 +5,9 @@ class CustomTextField extends StatelessWidget {
   final String hintText;
   final TextInputType inputType;
   final TextEditingController textController;
+  final bool passwordVisible;
 
-  const CustomTextField({Key? key, required this.hintText, required this.inputType, required this.textController}) : super(key: key);
+  const CustomTextField({Key? key, required this.hintText, required this.inputType, required this.textController, this.passwordVisible = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,7 @@ class CustomTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(4),
         ),
         child: TextField(
+          obscureText: passwordVisible,
           controller: textController,
           decoration: InputDecoration(
             border: InputBorder.none,

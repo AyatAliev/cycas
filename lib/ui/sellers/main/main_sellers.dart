@@ -15,29 +15,13 @@ class MainSellers extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xffffffff),
       appBar: AppBar(
-        elevation: 1.0,
-        backgroundColor: const Color(0xFFFFFFFF),
-        title: const Text("Smart Point",
-            style: TextStyle(
-                color: Color(0xFF424242),
-                fontSize: 16,
-                fontWeight: FontWeight.w500)),
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Container(
-            width: 16,
-            height: 9,
-            alignment: Alignment.center,
-            child: const Icon(
-              Icons.arrow_back_ios_rounded,
-              color: Colors.black,
-              size: 16,
-            ),
-          ),
-        ),
-      ),
+          elevation: 1.0,
+          backgroundColor: const Color(0xFFFFFFFF),
+          title: const Text("Smart Point",
+              style: TextStyle(
+                  color: Color(0xFF424242),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500))),
       body: Column(
         children: [
           Row(

@@ -1,14 +1,17 @@
+import 'package:cycas/ui/sellers/main/main_sellers.dart';
 import 'package:cycas/ui/widget/custom_button.dart';
 import 'package:cycas/ui/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'bloc/authorization_bloc.dart';
 
 class Authorization extends StatelessWidget {
   static const String routeName = "authorization";
 
-  const Authorization({Key? key}) : super(key: key);
+  final TextEditingController loginController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  Authorization({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +19,8 @@ class Authorization extends StatelessWidget {
       providers: [
         Provider<AuthorizationBloc>(
             create: (_) => AuthorizationBloc(),
-            dispose: (context, authorizationBloc) => authorizationBloc.dispose()),
+            dispose: (context, authorizationBloc) =>
+                authorizationBloc.dispose()),
       ],
       child: Scaffold(
         body: Column(
@@ -34,12 +38,28 @@ class Authorization extends StatelessWidget {
               ),
             ),
             CustomTextField(
-                hintText: "Логин", inputType: TextInputType.emailAddress,textController: TextEditingController(),),
+              hintText: "Логин",
+              inputType: TextInputType.emailAddress,
+              textController: loginController,
+            ),
             CustomTextField(
-                hintText: "Пароль", inputType: TextInputType.visiblePassword,textController: TextEditingController(),),
-            Container(
-                padding: const EdgeInsets.only(top: 40),
-                child: const CustomButton(text: "Войти"))
+                hintText: "Пароль",
+                inputType: TextInputType.visiblePassword,
+                textController: passwordController,
+                passwordVisible: true),
+            GestureDetector(
+              onTap: () {
+                if (loginController.text == "ayat") {
+                  Navigator.pushNamed(context, MainSellers.routeName);
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      content: Text("Не верный логин или пароль")));
+                }
+              },
+              child: Container(
+                  padding: const EdgeInsets.only(top: 40),
+                  child: const CustomButton(text: "Войти")),
+            )
           ],
         ),
       ),

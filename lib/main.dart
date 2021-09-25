@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         SellSellers.routeName: (BuildContext context) => const SellSellers(),
         AddSellers.routeName: (BuildContext context) => const AddSellers(),
         NotebookSellers.routeName: (BuildContext context) => const NotebookSellers(),
-        Authorization.routeName: (BuildContext context) => const Authorization(),
+        Authorization.routeName: (BuildContext context) => Authorization(),
       },
     );
   }
