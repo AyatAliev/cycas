@@ -15,6 +15,7 @@ class MainSellers extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xffffffff),
       appBar: AppBar(
+          automaticallyImplyLeading: false,
           elevation: 1.0,
           backgroundColor: const Color(0xFFFFFFFF),
           title: const Text("Smart Point",
@@ -60,11 +61,6 @@ class MainSellers extends StatelessWidget {
               text: "Таблицы",
               onTap: () {
                 Navigator.pushNamed(context, TablesSellers.routeName);
-              }),
-          CustomText(
-              text: "Продать",
-              onTap: () {
-                Navigator.pushNamed(context, SellSellers.routeName);
               }),
           CustomText(
             text: "Добавить",

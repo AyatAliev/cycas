@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
   final String hintText;
   final TextInputType inputType;
+  final TextInputAction inputAction;
   final TextEditingController textController;
   final bool passwordVisible;
 
-  const CustomTextField({Key? key, required this.hintText, required this.inputType, required this.textController, this.passwordVisible = false}) : super(key: key);
+  const CustomTextField({Key? key, required this.hintText, required this.inputType, required this.textController, this.passwordVisible = false, required this.inputAction}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,7 @@ class CustomTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(4),
         ),
         child: TextField(
+          textInputAction: inputAction,
           obscureText: passwordVisible,
           controller: textController,
           decoration: InputDecoration(

@@ -10,7 +10,7 @@ class AddNotebookSellers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xffffffff),
       appBar: AppBar(
         elevation: 1.0,
@@ -36,95 +36,97 @@ class AddNotebookSellers extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            margin: const EdgeInsets.only(left: 16, top: 40),
-            child: const Text(
-              "Добавить",
-              style: TextStyle(fontSize: 36, fontWeight: FontWeight.w500),
+      body: SafeArea(
+          bottom: true,
+          child: CustomScrollView(slivers: [
+            SliverToBoxAdapter(
+              child: Container(
+                margin: const EdgeInsets.only(left: 16, top: 40),
+                child: const Text(
+                  "Добавить",
+                  style: TextStyle(fontSize: 36, fontWeight: FontWeight.w500),
+                ),
+              ),
             ),
-          ),
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 20),
-            child: const Text(
-              "Ноутбук",
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xFF797979)),
+            SliverToBoxAdapter(
+              child: Container(
+                margin: const EdgeInsets.only(left: 20,right: 20,bottom: 40),
+                child: const Text(
+                  "Ноутбук",
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFF797979)),
+                ),
+              ),
             ),
-          ),
-          Expanded(
-            child: Container(
-              margin: const EdgeInsets.only(top: 40),
-              child: SafeArea(
-                  bottom: true,
-                  child: CustomScrollView(slivers: [
-                    SliverToBoxAdapter(
-                      child: CustomTextField(
-                          hintText: "ID",
-                          inputType: TextInputType.number,
-                          textController: TextEditingController()),
-                    ),
-                    SliverToBoxAdapter(
-                      child: CustomTextField(
-                          hintText: "Модель",
-                          inputType: TextInputType.number,
-                          textController: TextEditingController()),
-                    ),
-                    SliverToBoxAdapter(
-                      child: CustomTextField(
-                          hintText: "Приход",
-                          inputType: TextInputType.number,
-                          textController: TextEditingController()),
-                    ),
-                    SliverToBoxAdapter(
-                      child: CustomTextField(
-                          hintText: "Продажа",
-                          inputType: TextInputType.number,
-                          textController: TextEditingController()),
-                    ),
-                    SliverToBoxAdapter(
-                      child: CustomTextField(
-                          hintText: "Процессор",
-                          inputType: TextInputType.number,
-                          textController: TextEditingController()),
-                    ),
-                    SliverToBoxAdapter(
-                      child: CustomTextField(
-                          hintText: "Видеокарта",
-                          inputType: TextInputType.number,
-                          textController: TextEditingController()),
-                    ),
-                    SliverToBoxAdapter(
-                      child: CustomTextField(
-                          hintText: "HDD / SSD",
-                          inputType: TextInputType.number,
-                          textController: TextEditingController()),
-                    ),
-                    SliverToBoxAdapter(
-                      child: CustomTextField(
-                          hintText: "ОЗУ",
-                          inputType: TextInputType.number,
-                          textController: TextEditingController()),
-                    ),
-                    SliverToBoxAdapter(
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Center(
-                          child: Container(
-                              padding: const EdgeInsets.only(top: 40),
-                              child: const CustomButton(text: "Добавить")),
-                        ),
-                      ),
-                    )
-                  ])),
+            SliverToBoxAdapter(
+              child: CustomTextField(
+                  hintText: "ID",
+                  inputType: TextInputType.number,
+                  textController: TextEditingController(),
+                  inputAction: TextInputAction.next),
             ),
-          ),
-        ],
-      ),
+            SliverToBoxAdapter(
+              child: CustomTextField(
+                  hintText: "Модель",
+                  inputType: TextInputType.text,
+                  inputAction: TextInputAction.next,
+                  textController: TextEditingController()),
+            ),
+            SliverToBoxAdapter(
+              child: CustomTextField(
+                  hintText: "Приход",
+                  inputType: TextInputType.number,
+                  inputAction: TextInputAction.next,
+                  textController: TextEditingController()),
+            ),
+            SliverToBoxAdapter(
+              child: CustomTextField(
+                  hintText: "Продажа",
+                  inputType: TextInputType.number,
+                  inputAction: TextInputAction.next,
+                  textController: TextEditingController()),
+            ),
+            SliverToBoxAdapter(
+              child: CustomTextField(
+                  hintText: "Процессор",
+                  inputType: TextInputType.text,
+                  inputAction: TextInputAction.next,
+                  textController: TextEditingController()),
+            ),
+            SliverToBoxAdapter(
+              child: CustomTextField(
+                  hintText: "Видеокарта",
+                  inputType: TextInputType.text,
+                  inputAction: TextInputAction.next,
+                  textController: TextEditingController()),
+            ),
+            SliverToBoxAdapter(
+              child: CustomTextField(
+                  hintText: "HDD / SSD",
+                  inputType: TextInputType.text,
+                  inputAction: TextInputAction.next,
+                  textController: TextEditingController()),
+            ),
+            SliverToBoxAdapter(
+              child: CustomTextField(
+                  hintText: "ОЗУ",
+                  inputType: TextInputType.text,
+                  inputAction: TextInputAction.done,
+                  textController: TextEditingController()),
+            ),
+            SliverToBoxAdapter(
+              child: GestureDetector(
+                onTap: () {},
+                child: Center(
+                  child: Container(
+                      padding: const EdgeInsets.only(top: 40),
+                      child: const CustomButton(text: "Добавить")),
+                ),
+              ),
+            )
+          ])),
     );
   }
 }

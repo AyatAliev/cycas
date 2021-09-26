@@ -1,3 +1,4 @@
+import 'package:cycas/ui/sellers/sell/sell_notebook_sellers.dart';
 import 'package:flutter/material.dart';
 
 class NotebookSellers extends StatelessWidget {
@@ -63,83 +64,99 @@ class NotebookSellers extends StatelessWidget {
                     shrinkWrap: true,
                     itemCount: 30,
                     itemBuilder: (context, position) {
-                      return Container(
-                        color: (position % 2 == 0)
-                            ? const Color(0x40e9e9e9)
-                            : const Color(0xFFF2F2F2),
-                        child: ExpansionTile(
-                          children: [
-                            Container(
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: const [
-                                          Text("Модель: Asus VivoBook"),
-                                          Text("Приход: 44000 сом"),
-                                          Text("Продажа: 48000 сом")
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Column(
+                      return Dismissible(
+                        background: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          alignment: Alignment.centerRight,
+                          color: const Color(0xffF25B63),
+                          child: const Icon(
+                            Icons.delete_outline,
+                            color: Colors.white,
+                          ),
+                        ),
+                        direction: DismissDirection.endToStart,
+                        onDismissed: (direction) {
+                          Navigator.pushNamed(context, SellNotebookSellers.routeName);
+                        },
+                        key: ValueKey(position),
+                        child: Container(
+                          color: (position % 2 == 0)
+                              ? const Color(0x40e9e9e9)
+                              : const Color(0xFFF2F2F2),
+                          child: ExpansionTile(
+                            children: [
+                              Container(
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: const [
-                                            Text("Видеокарта: GTX1050 4гб"),
-                                            Text("Процессор: I5-10300H"),
-                                            Text("SSD: 512 гб  ОЗУ: 8 гб")
-                                          ])
+                                            Text("Модель: Asus VivoBook"),
+                                            Text("Приход: 44000 сом"),
+                                            Text("Продажа: 48000 сом")
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: const [
+                                              Text("Видеокарта: GTX1050 4гб"),
+                                              Text("Процессор: I5-10300H"),
+                                              Text("SSD: 512 гб  ОЗУ: 8 гб")
+                                            ])
+                                      ],
+                                    )
+                                  ],
+                                ),
+                                margin: const EdgeInsets.symmetric(
+                                    vertical: 18, horizontal: 18),
+                              )
+                            ],
+                            title: Container(
+                              margin: const EdgeInsets.symmetric(
+                                  horizontal: 24, vertical: 18),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text("$position",
+                                          style: const TextStyle(
+                                              fontSize: 16,
+                                              color: Colors.grey,
+                                              fontWeight: FontWeight.bold)),
+                                      Container(
+                                        alignment: Alignment.centerLeft,
+                                        margin: const EdgeInsets.only(left: 8),
+                                        child: const Text(
+                                          "Lenovo",
+                                          style: TextStyle(
+                                              fontSize: 16.0,
+                                              color: Colors.black),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: const [
+                                      Text(
+                                        "29000 cом",
+                                        style: TextStyle(
+                                            fontSize: 16.0, color: Colors.black),
+                                      ),
                                     ],
                                   )
                                 ],
                               ),
-                              margin: const EdgeInsets.symmetric(
-                                  vertical: 18, horizontal: 18),
-                            )
-                          ],
-                          title: Container(
-                            margin: const EdgeInsets.symmetric(
-                                horizontal: 24, vertical: 18),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Text("$position",
-                                        style: const TextStyle(
-                                            fontSize: 16,
-                                            color: Colors.grey,
-                                            fontWeight: FontWeight.bold)),
-                                    Container(
-                                      alignment: Alignment.centerLeft,
-                                      margin: const EdgeInsets.only(left: 8),
-                                      child: const Text(
-                                        "Lenovo",
-                                        style: TextStyle(
-                                            fontSize: 16.0,
-                                            color: Colors.black),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: const [
-                                    Text(
-                                      "29000 cом",
-                                      style: TextStyle(
-                                          fontSize: 16.0, color: Colors.black),
-                                    ),
-                                  ],
-                                )
-                              ],
                             ),
                           ),
                         ),

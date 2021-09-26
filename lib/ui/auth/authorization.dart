@@ -41,11 +41,13 @@ class Authorization extends StatelessWidget {
               hintText: "Логин",
               inputType: TextInputType.emailAddress,
               textController: loginController,
+              inputAction: TextInputAction.next,
             ),
             CustomTextField(
                 hintText: "Пароль",
                 inputType: TextInputType.visiblePassword,
                 textController: passwordController,
+                inputAction: TextInputAction.done,
                 passwordVisible: true),
             GestureDetector(
               onTap: () {

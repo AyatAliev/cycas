@@ -118,6 +118,7 @@ class SellNotebookSellers extends StatelessWidget {
                     ),
                     SliverToBoxAdapter(
                       child: CustomTextField(
+                          inputAction: TextInputAction.done,
                           hintText: "Цена",
                           inputType: TextInputType.number,
                           textController: TextEditingController()),

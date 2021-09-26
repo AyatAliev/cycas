@@ -16,7 +16,7 @@ class CustomText extends StatelessWidget {
         },
         child: Container(
           width: double.infinity,
-          margin: const EdgeInsets.symmetric(horizontal: 28,vertical: 16),
+          margin: const EdgeInsets.symmetric(horizontal: 28,vertical: 8),
           color: const Color(0x40e9e9e9),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
