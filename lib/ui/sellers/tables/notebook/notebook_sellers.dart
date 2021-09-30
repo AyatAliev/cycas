@@ -1,8 +1,8 @@
-import 'package:cycas/ui/sellers/sell/sell_notebook_sellers.dart';
+import 'package:cycas/ui/sellers/sell/notebook/sell_notebook_sellers.dart';
 import 'package:flutter/material.dart';
 
 class NotebookSellers extends StatelessWidget {
-  static const String routeName = "notebook_sellers";
+  static const String routeName = "in_stock_notebook_sellers";
 
   const NotebookSellers({Key? key}) : super(key: key);
 

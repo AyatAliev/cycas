@@ -1,6 +1,6 @@
 import 'package:cycas/ui/sellers/add/add_sellers.dart';
 import 'package:cycas/ui/sellers/sell/sell_sellers.dart';
-import 'package:cycas/ui/sellers/tables/tables_sellers.dart';
+import 'package:cycas/ui/sellers/tables/in_stock_sellers.dart';
 import 'package:cycas/ui/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 
@@ -58,9 +58,14 @@ class MainSellers extends StatelessWidget {
             ],
           ),
           CustomText(
-              text: "Таблицы",
+              text: "В наличии",
               onTap: () {
-                Navigator.pushNamed(context, TablesSellers.routeName);
+                Navigator.pushNamed(context, InStockSellers.routeName);
+              }),
+          CustomText(
+              text: "Проданные",
+              onTap: () {
+                Navigator.pushNamed(context, SellSellers.routeName);
               }),
           CustomText(
             text: "Добавить",

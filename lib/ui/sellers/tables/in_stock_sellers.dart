@@ -2,10 +2,10 @@ import 'package:cycas/ui/sellers/tables/notebook/notebook_sellers.dart';
 import 'package:cycas/ui/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 
-class TablesSellers extends StatelessWidget {
-  static const String routeName = "tables_sellers";
+class InStockSellers extends StatelessWidget {
+  static const String routeName = "in_stock_sellers";
 
-  const TablesSellers({Key? key}) : super(key: key);
+  const InStockSellers({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class TablesSellers extends StatelessWidget {
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
             child: const Text(
-              "Таблицы",
+              "В наличии",
               style: TextStyle(fontSize: 36, fontWeight: FontWeight.w500),
             ),
           ),
