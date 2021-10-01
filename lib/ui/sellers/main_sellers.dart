@@ -1,10 +1,14 @@
 import 'package:cycas/ui/sellers/add/accessory/add_phone_sellers.dart';
 import 'package:cycas/ui/sellers/add/notebook/add_notebook_sellers.dart';
 import 'package:cycas/ui/sellers/add/phone/add_phone_sellers.dart';
-import 'package:cycas/ui/sellers/sold/tables/sold_tables_notebook_sellers.dart';
-import 'package:cycas/ui/sellers/tables/notebook/notebook_sellers.dart';
+import 'package:cycas/ui/sellers/in_stock/phone/in_stock_phone_sellers.dart';
+import 'package:cycas/ui/sellers/sold/accessory/sold_tables_accessory_sellers.dart';
+import 'package:cycas/ui/sellers/sold/phone/sold_tables_phone_sellers.dart';
+import 'package:cycas/ui/sellers/sold/tables_notebook/sold_tables_notebook_sellers.dart';
 import 'package:cycas/ui/widget/custom_text.dart';
 import 'package:flutter/material.dart';
+
+import 'in_stock/notebook/in_stock_notebook_sellers.dart';
 
 class MainSellers extends StatelessWidget {
   static const String routeName = "main_sellers";
@@ -77,11 +81,17 @@ class MainSellers extends StatelessWidget {
                             text: "Ноутбуки",
                             onTap: () {
                               Navigator.pushNamed(
-                                  context, TablesNotebookSellers.routeName);
+                                  context, InStockNotebookSellers.routeName);
                             }),
-                        CustomText(text: "Телефоны", onTap: () {}),
+                        CustomText(text: "Телефоны", onTap: () {
+                          Navigator.pushNamed(
+                              context, InStockPhoneSellers.routeName);
+                        }),
                         CustomText(text: "Акксесуары", onTap: () {}),
-                        CustomText(text: "Рассрочка", onTap: () {}),
+                        CustomText(text: "Рассрочка", onTap: () {
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                              content: Text("В разработке")));
+                        }),
                       ],
                     ),
                   )
@@ -110,12 +120,18 @@ class MainSellers extends StatelessWidget {
                             CustomText(
                                 text: "Ноутбуки",
                                 onTap: () {
-                                  Navigator.pushNamed(context,
-                                      SoldTablesNotebookSellers.routeName);
+                                  Navigator.pushNamed(context, SoldTablesNotebookSellers.routeName);
                                 }),
-                            CustomText(text: "Телефоны", onTap: () {}),
-                            CustomText(text: "Акксесуары", onTap: () {}),
-                            CustomText(text: "В рассрочку", onTap: () {}),
+                            CustomText(text: "Телефоны", onTap: () {
+                              Navigator.pushNamed(context, SoldTablesPhoneSellers.routeName);
+                            }),
+                            CustomText(text: "Акксесуары", onTap: () {
+                              Navigator.pushNamed(context, SoldTablesAccessorySellers.routeName);
+                            }),
+                            CustomText(text: "В рассрочку", onTap: () {
+                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                                  content: Text("В разработке")));
+                            }),
                           ],
                         ),
                       )

@@ -1,10 +1,10 @@
-import 'package:cycas/ui/sellers/sold/notebook/sell_notebook_sellers.dart';
+import 'package:cycas/ui/sellers/sold/notebook/sold_notebook_sellers.dart';
 import 'package:flutter/material.dart';
 
-class TablesNotebookSellers extends StatelessWidget {
+class InStockNotebookSellers extends StatelessWidget {
   static const String routeName = "in_stock_notebook_sellers";
 
-  const TablesNotebookSellers({Key? key}) : super(key: key);
+  const InStockNotebookSellers({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,8 @@ class TablesNotebookSellers extends StatelessWidget {
                         ),
                         direction: DismissDirection.endToStart,
                         onDismissed: (direction) {
-                          Navigator.pushNamed(context, SoldNotebookSellers.routeName);
+                          Navigator.pushNamed(
+                              context, SoldNotebookSellers.routeName);
                         },
                         key: ValueKey(position),
                         child: Container(
@@ -87,14 +88,12 @@ class TablesNotebookSellers extends StatelessWidget {
                             children: [
                               Container(
                                 child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
                                       children: [
                                         Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
                                           children: const [
                                             Text("Модель: Asus VivoBook"),
                                             Text("Приход: 44000 сом"),
@@ -103,11 +102,11 @@ class TablesNotebookSellers extends StatelessWidget {
                                         )
                                       ],
                                     ),
+                                    Container(padding: const EdgeInsets.symmetric(horizontal: 8)),
                                     Row(
                                       children: [
                                         Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
                                             children: const [
                                               Text("Видеокарта: GTX1050 4гб"),
                                               Text("Процессор: I5-10300H"),
@@ -117,13 +116,11 @@ class TablesNotebookSellers extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                margin: const EdgeInsets.symmetric(
-                                    vertical: 18, horizontal: 18),
+                                margin: const EdgeInsets.symmetric(vertical: 18, horizontal: 18),
                               )
                             ],
                             title: Container(
-                              margin: const EdgeInsets.symmetric(
-                                  horizontal: 24, vertical: 18),
+                              margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 18),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
@@ -151,7 +148,8 @@ class TablesNotebookSellers extends StatelessWidget {
                                       Text(
                                         "29000 cом",
                                         style: TextStyle(
-                                            fontSize: 16.0, color: Colors.black),
+                                            fontSize: 16.0,
+                                            color: Colors.black),
                                       ),
                                     ],
                                   )

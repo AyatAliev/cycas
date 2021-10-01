@@ -2,10 +2,13 @@ import 'package:cycas/ui/auth/authorization.dart';
 import 'package:cycas/ui/sellers/add/accessory/add_phone_sellers.dart';
 import 'package:cycas/ui/sellers/add/notebook/add_notebook_sellers.dart';
 import 'package:cycas/ui/sellers/add/phone/add_phone_sellers.dart';
-import 'package:cycas/ui/sellers/main/main_sellers.dart';
-import 'package:cycas/ui/sellers/sold/notebook/sell_notebook_sellers.dart';
-import 'package:cycas/ui/sellers/sold/tables/sold_tables_notebook_sellers.dart';
-import 'package:cycas/ui/sellers/tables/notebook/notebook_sellers.dart';
+import 'package:cycas/ui/sellers/in_stock/notebook/in_stock_notebook_sellers.dart';
+import 'package:cycas/ui/sellers/in_stock/phone/in_stock_phone_sellers.dart';
+import 'package:cycas/ui/sellers/main_sellers.dart';
+import 'package:cycas/ui/sellers/sold/accessory/sold_tables_accessory_sellers.dart';
+import 'package:cycas/ui/sellers/sold/notebook/sold_notebook_sellers.dart';
+import 'package:cycas/ui/sellers/sold/phone/sold_tables_phone_sellers.dart';
+import 'package:cycas/ui/sellers/sold/tables_notebook/sold_tables_notebook_sellers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -29,13 +32,16 @@ class MyApp extends StatelessWidget {
       initialRoute: Authorization.routeName,
       routes: {
         MainSellers.routeName: (BuildContext context) => const MainSellers(),
-        TablesNotebookSellers.routeName: (BuildContext context) => const TablesNotebookSellers(),
+        InStockNotebookSellers.routeName: (BuildContext context) => const InStockNotebookSellers(),
+        InStockPhoneSellers.routeName: (BuildContext context) => const InStockPhoneSellers(),
         Authorization.routeName: (BuildContext context) => Authorization(),
         AddNotebookSellers.routeName: (BuildContext context) => const AddNotebookSellers(),
         SoldNotebookSellers.routeName: (BuildContext context) => const SoldNotebookSellers(),
+        SoldTablesPhoneSellers.routeName: (BuildContext context) => const SoldTablesPhoneSellers(),
         SoldTablesNotebookSellers.routeName: (BuildContext context) => const SoldTablesNotebookSellers(),
         AddPhoneSellers.routeName: (BuildContext context) => const AddPhoneSellers(),
         AddAccessorySellers.routeName: (BuildContext context) => const AddAccessorySellers(),
+        SoldTablesAccessorySellers.routeName: (BuildContext context) => const SoldTablesAccessorySellers(),
       },
     );
   }

@@ -1,10 +1,10 @@
-import 'package:cycas/ui/sellers/sold/notebook/sell_notebook_sellers.dart';
+import 'package:cycas/ui/sellers/sold/notebook/sold_notebook_sellers.dart';
 import 'package:flutter/material.dart';
 
-class SoldTablesNotebookSellers extends StatelessWidget {
-  static const String routeName = "sold_tables_notebook_sellers";
+class InStockAccessorySellers extends StatelessWidget {
+  static const String routeName = "in_stock_accessory_sellers";
 
-  const SoldTablesNotebookSellers({Key? key}) : super(key: key);
+  const InStockAccessorySellers({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,14 +41,14 @@ class SoldTablesNotebookSellers extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(left: 16, top: 40),
             child: const Text(
-              "Проданные",
+              "В наличии",
               style: TextStyle(fontSize: 36, fontWeight: FontWeight.w500),
             ),
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 20),
             child: const Text(
-              "Ноутбуки",
+              "Аксессуары",
               style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
@@ -82,50 +82,23 @@ class SoldTablesNotebookSellers extends StatelessWidget {
                                           Column(
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: const [
-                                              Text("Модель: Asus VivoBook"),
-                                              Text("Приход: 44000 сом"),
-                                              Text("Продажа: 48000 сом"),
+                                              Text("Модель: Iphone 13 Pro Max",maxLines: 1,overflow: TextOverflow.ellipsis),
+                                              Text("Приход: 140000 сом",maxLines: 1,overflow: TextOverflow.ellipsis),
+                                              Text("Продажа: 150000 сом",maxLines: 1,overflow: TextOverflow.ellipsis),
+                                              Text("Цена в рассрочку: 12000 сом",maxLines: 1,overflow: TextOverflow.ellipsis),
                                             ],
                                           )
                                         ],
                                       ),
+                                      Container(padding: const EdgeInsets.symmetric(horizontal: 8)),
                                       Row(
                                         children: [
                                           Column(
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: const [
-                                                Text("Видеокарта: GTX1050 4гб"),
-                                                Text("Процессор: I5-10300H"),
-                                                Text("SSD: 512 гб  ОЗУ: 8 гб")
-                                              ])
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                  Container(
-                                      width: MediaQuery.of(context).size.width * 0.5,
-                                      margin: const EdgeInsets.only(bottom: 16,top: 24),
-                                      height: 1,
-                                      color: const Color(0xFFCCCCCC)),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: const [
-                                              Text("Продано - М. Нурия"),
-                                            ],
-                                          )
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: const [
-                                                Text("Дата продажи - 27.09.2021"),
+                                                Text("S/N: 10010100110"),
+                                                Text("Цвет: Синий"),
+                                                Text("Память: 512 gb")
                                               ])
                                         ],
                                       )
@@ -139,7 +112,7 @@ class SoldTablesNotebookSellers extends StatelessWidget {
                           ],
                           title: Container(
                             margin: const EdgeInsets.symmetric(
-                                horizontal: 24, vertical: 18),
+                                horizontal: 8, vertical: 18),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -152,9 +125,9 @@ class SoldTablesNotebookSellers extends StatelessWidget {
                                             fontWeight: FontWeight.bold)),
                                     Container(
                                       alignment: Alignment.centerLeft,
-                                      margin: const EdgeInsets.only(left: 8),
+                                      margin: const EdgeInsets.only(left: 12),
                                       child: const Text(
-                                        "Lenovo",
+                                        "Iphone 13 Pro Max",
                                         style: TextStyle(
                                             fontSize: 16.0,
                                             color: Colors.black),
@@ -165,7 +138,7 @@ class SoldTablesNotebookSellers extends StatelessWidget {
                                 Row(
                                   children: const [
                                     Text(
-                                      "29000 cом",
+                                      "150000 cом",
                                       style: TextStyle(
                                           fontSize: 16.0, color: Colors.black),
                                     ),

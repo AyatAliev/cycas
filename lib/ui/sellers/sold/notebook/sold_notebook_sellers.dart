@@ -115,7 +115,7 @@ class SoldNotebookSellers extends StatelessWidget {
                                     focusColor: Colors.black,
                                     hoverColor: Colors.black,
                                     onChanged: (SingingCharacter? value) {
-                                    _character = value;
+                                      _character = value;
                                     }),
                                 const Text("Наличные",
                                     style: TextStyle(
@@ -131,9 +131,8 @@ class SoldNotebookSellers extends StatelessWidget {
                                   value: SingingCharacter.jefferson,
                                   groupValue: _character,
                                   onChanged: (SingingCharacter? value) {
-                                  _character = value;
+                                    _character = value;
                                   }),
-
                               const Text("Рассрочка",
                                   style: TextStyle(
                                       color: Colors.black,
