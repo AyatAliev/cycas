@@ -1,10 +1,10 @@
-import 'package:cycas/ui/sellers/sell/notebook/sell_notebook_sellers.dart';
+import 'package:cycas/ui/sellers/sold/notebook/sell_notebook_sellers.dart';
 import 'package:flutter/material.dart';
 
-class NotebookSellers extends StatelessWidget {
+class TablesNotebookSellers extends StatelessWidget {
   static const String routeName = "in_stock_notebook_sellers";
 
-  const NotebookSellers({Key? key}) : super(key: key);
+  const TablesNotebookSellers({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,7 @@ class NotebookSellers extends StatelessWidget {
                         ),
                         direction: DismissDirection.endToStart,
                         onDismissed: (direction) {
-                          Navigator.pushNamed(context, SellNotebookSellers.routeName);
+                          Navigator.pushNamed(context, SoldNotebookSellers.routeName);
                         },
                         key: ValueKey(position),
                         child: Container(

@@ -1,11 +1,9 @@
 import 'package:cycas/ui/auth/authorization.dart';
-import 'package:cycas/ui/sellers/add/add_sellers.dart';
 import 'package:cycas/ui/sellers/add/notebook/add_notebook_sellers.dart';
 import 'package:cycas/ui/sellers/main/main_sellers.dart';
-import 'package:cycas/ui/sellers/sell/notebook/sell_notebook_sellers.dart';
-import 'package:cycas/ui/sellers/sell/sell_sellers.dart';
+import 'package:cycas/ui/sellers/sold/notebook/sell_notebook_sellers.dart';
+import 'package:cycas/ui/sellers/sold/tables/sold_tables_notebook_sellers.dart';
 import 'package:cycas/ui/sellers/tables/notebook/notebook_sellers.dart';
-import 'package:cycas/ui/sellers/tables/in_stock_sellers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -29,13 +27,11 @@ class MyApp extends StatelessWidget {
       initialRoute: Authorization.routeName,
       routes: {
         MainSellers.routeName: (BuildContext context) => const MainSellers(),
-        InStockSellers.routeName: (BuildContext context) => const InStockSellers(),
-        SellSellers.routeName: (BuildContext context) => const SellSellers(),
-        AddSellers.routeName: (BuildContext context) => const AddSellers(),
-        NotebookSellers.routeName: (BuildContext context) => const NotebookSellers(),
+        TablesNotebookSellers.routeName: (BuildContext context) => const TablesNotebookSellers(),
         Authorization.routeName: (BuildContext context) => Authorization(),
         AddNotebookSellers.routeName: (BuildContext context) => const AddNotebookSellers(),
-        SellNotebookSellers.routeName: (BuildContext context) => const SellNotebookSellers(),
+        SoldNotebookSellers.routeName: (BuildContext context) => const SoldNotebookSellers(),
+        SoldTablesNotebookSellers.routeName: (BuildContext context) => const SoldTablesNotebookSellers(),
       },
     );
   }
