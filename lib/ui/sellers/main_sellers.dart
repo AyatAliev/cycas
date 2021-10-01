@@ -1,6 +1,7 @@
 import 'package:cycas/ui/sellers/add/accessory/add_phone_sellers.dart';
 import 'package:cycas/ui/sellers/add/notebook/add_notebook_sellers.dart';
 import 'package:cycas/ui/sellers/add/phone/add_phone_sellers.dart';
+import 'package:cycas/ui/sellers/in_stock/accessory/in_stock_accessory_sellers.dart';
 import 'package:cycas/ui/sellers/in_stock/phone/in_stock_phone_sellers.dart';
 import 'package:cycas/ui/sellers/sold/accessory/sold_tables_accessory_sellers.dart';
 import 'package:cycas/ui/sellers/sold/phone/sold_tables_phone_sellers.dart';
@@ -87,7 +88,10 @@ class MainSellers extends StatelessWidget {
                           Navigator.pushNamed(
                               context, InStockPhoneSellers.routeName);
                         }),
-                        CustomText(text: "Акксесуары", onTap: () {}),
+                        CustomText(text: "Акксесуары", onTap: () {
+                          Navigator.pushNamed(
+                              context, InStockAccessorySellers.routeName);
+                        }),
                         CustomText(text: "Рассрочка", onTap: () {
                           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                               content: Text("В разработке")));
