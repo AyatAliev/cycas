@@ -6,9 +6,10 @@ class CustomTextField extends StatelessWidget {
   final TextInputType inputType;
   final TextInputAction inputAction;
   final TextEditingController textController;
+  final int maxLines;
   final bool passwordVisible;
 
-  const CustomTextField({Key? key, required this.hintText, required this.inputType, required this.textController, this.passwordVisible = false, required this.inputAction}) : super(key: key);
+  const CustomTextField({Key? key, required this.hintText, required this.inputType, required this.textController, this.passwordVisible = false, required this.inputAction, this.maxLines = 1}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +24,7 @@ class CustomTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(4),
         ),
         child: TextField(
+          maxLines: maxLines,
           textInputAction: inputAction,
           obscureText: passwordVisible,
           controller: textController,

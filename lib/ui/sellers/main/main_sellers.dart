@@ -1,5 +1,6 @@
+import 'package:cycas/ui/sellers/add/accessory/add_phone_sellers.dart';
 import 'package:cycas/ui/sellers/add/notebook/add_notebook_sellers.dart';
-import 'package:cycas/ui/sellers/sold/notebook/sell_notebook_sellers.dart';
+import 'package:cycas/ui/sellers/add/phone/add_phone_sellers.dart';
 import 'package:cycas/ui/sellers/sold/tables/sold_tables_notebook_sellers.dart';
 import 'package:cycas/ui/sellers/tables/notebook/notebook_sellers.dart';
 import 'package:cycas/ui/widget/custom_text.dart';
@@ -62,11 +63,11 @@ class MainSellers extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 28, vertical: 8),
+             margin: const EdgeInsets.symmetric(horizontal: 28, vertical: 8),
               color: const Color(0x40e9e9e9),
               child: ExpansionTile(
                 tilePadding:
-                    const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+                    const EdgeInsets.symmetric(vertical: 4, horizontal: 24),
                 children: [
                   Container(
                     color: const Color(0xffffffff),
@@ -75,7 +76,8 @@ class MainSellers extends StatelessWidget {
                         CustomText(
                             text: "Ноутбуки",
                             onTap: () {
-                              Navigator.pushNamed(context, TablesNotebookSellers.routeName);
+                              Navigator.pushNamed(
+                                  context, TablesNotebookSellers.routeName);
                             }),
                         CustomText(text: "Телефоны", onTap: () {}),
                         CustomText(text: "Акксесуары", onTap: () {}),
@@ -95,11 +97,11 @@ class MainSellers extends StatelessWidget {
           SliverToBoxAdapter(
               child: Container(
                   margin:
-                      const EdgeInsets.symmetric(horizontal: 28, vertical: 8),
+                  const EdgeInsets.symmetric(horizontal: 28, vertical: 8),
                   color: const Color(0x40e9e9e9),
                   child: ExpansionTile(
                     tilePadding:
-                        const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+                        const EdgeInsets.symmetric(vertical: 4, horizontal: 24),
                     children: [
                       Container(
                         color: const Color(0xffffffff),
@@ -108,8 +110,8 @@ class MainSellers extends StatelessWidget {
                             CustomText(
                                 text: "Ноутбуки",
                                 onTap: () {
-                                  Navigator.pushNamed(
-                                      context, SoldTablesNotebookSellers.routeName);
+                                  Navigator.pushNamed(context,
+                                      SoldTablesNotebookSellers.routeName);
                                 }),
                             CustomText(text: "Телефоны", onTap: () {}),
                             CustomText(text: "Акксесуары", onTap: () {}),
@@ -126,11 +128,12 @@ class MainSellers extends StatelessWidget {
                   ))),
           SliverToBoxAdapter(
             child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 28, vertical: 8),
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 28, vertical: 8),
                 color: const Color(0x40e9e9e9),
                 child: ExpansionTile(
                   tilePadding:
-                      const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+                      const EdgeInsets.symmetric(vertical: 4, horizontal: 24),
                   children: [
                     Container(
                       color: const Color(0xffffffff),
@@ -142,8 +145,14 @@ class MainSellers extends StatelessWidget {
                                 Navigator.pushNamed(
                                     context, AddNotebookSellers.routeName);
                               }),
-                          CustomText(text: "Телефоны", onTap: () {}),
-                          CustomText(text: "Акксесуары", onTap: () {}),
+                          CustomText(text: "Телефоны", onTap: () {
+                            Navigator.pushNamed(
+                                context, AddPhoneSellers.routeName);
+                          }),
+                          CustomText(text: "Акксесуары", onTap: () {
+                            Navigator.pushNamed(
+                                context, AddAccessorySellers.routeName);
+                          }),
                         ],
                       ),
                     )

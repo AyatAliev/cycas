@@ -1,5 +1,7 @@
 import 'package:cycas/ui/auth/authorization.dart';
+import 'package:cycas/ui/sellers/add/accessory/add_phone_sellers.dart';
 import 'package:cycas/ui/sellers/add/notebook/add_notebook_sellers.dart';
+import 'package:cycas/ui/sellers/add/phone/add_phone_sellers.dart';
 import 'package:cycas/ui/sellers/main/main_sellers.dart';
 import 'package:cycas/ui/sellers/sold/notebook/sell_notebook_sellers.dart';
 import 'package:cycas/ui/sellers/sold/tables/sold_tables_notebook_sellers.dart';
@@ -32,6 +34,8 @@ class MyApp extends StatelessWidget {
         AddNotebookSellers.routeName: (BuildContext context) => const AddNotebookSellers(),
         SoldNotebookSellers.routeName: (BuildContext context) => const SoldNotebookSellers(),
         SoldTablesNotebookSellers.routeName: (BuildContext context) => const SoldTablesNotebookSellers(),
+        AddPhoneSellers.routeName: (BuildContext context) => const AddPhoneSellers(),
+        AddAccessorySellers.routeName: (BuildContext context) => const AddAccessorySellers(),
       },
     );
   }
