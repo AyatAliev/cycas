@@ -1,3 +1,4 @@
+import 'package:cycas/ui/sellers/sold/notebook/sold_notebook_sellers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
@@ -79,7 +80,10 @@ class InStockNotebookSellers extends StatelessWidget {
                                 label: 'Delete',
                                 backgroundColor: Colors.red,
                                 icon: Icons.delete,
-                                onPressed: (context) {},
+                                onPressed: (context) {
+                                  Navigator.pushNamed(
+                                      context, SoldNotebookSellers.routeName);
+                                },
                               ),
                             ],
                           ),
