@@ -6,9 +6,9 @@ import 'package:cycas/ui/sellers/in_stock/accessory/in_stock_accessory_sellers.d
 import 'package:cycas/ui/sellers/in_stock/notebook/in_stock_notebook_sellers.dart';
 import 'package:cycas/ui/sellers/in_stock/phone/in_stock_phone_sellers.dart';
 import 'package:cycas/ui/sellers/main_sellers.dart';
-import 'package:cycas/ui/sellers/sold/accessory/sold_tables_accessory_sellers.dart';
+import 'package:cycas/ui/sellers/sold/accessory_tables/sold_tables_accessory_sellers.dart';
 import 'package:cycas/ui/sellers/sold/notebook/sold_notebook_sellers.dart';
-import 'package:cycas/ui/sellers/sold/phone/sold_tables_phone_sellers.dart';
+import 'package:cycas/ui/sellers/sold/phone_tables/sold_tables_phone_sellers.dart';
 import 'package:cycas/ui/sellers/sold/tables_notebook/sold_tables_notebook_sellers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

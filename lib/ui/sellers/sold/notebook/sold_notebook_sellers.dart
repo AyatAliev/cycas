@@ -1,5 +1,6 @@
 import 'package:cycas/ui/widget/custom_button.dart';
 import 'package:cycas/ui/widget/custom_text_field.dart';
+import 'package:cycas/ui/widget/sell_radio.dart';
 import 'package:flutter/material.dart';
 
 class SoldNotebookSellers extends StatelessWidget {
@@ -9,8 +10,6 @@ class SoldNotebookSellers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SingingCharacter? _character = SingingCharacter.lafayette;
-
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xffffffff),
@@ -102,46 +101,8 @@ class SoldNotebookSellers extends StatelessWidget {
                           inputType: TextInputType.number,
                           textController: TextEditingController()),
                     ),
-                    SliverToBoxAdapter(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Center(
-                            child: Row(
-                              children: [
-                                Radio(
-                                    value: SingingCharacter.lafayette,
-                                    groupValue: _character,
-                                    focusColor: Colors.black,
-                                    hoverColor: Colors.black,
-                                    onChanged: (SingingCharacter? value) {
-                                      _character = value;
-                                    }),
-                                const Text("Наличные",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 16)),
-                              ],
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  value: SingingCharacter.jefferson,
-                                  groupValue: _character,
-                                  onChanged: (SingingCharacter? value) {
-                                    _character = value;
-                                  }),
-                              const Text("Рассрочка",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 16)),
-                            ],
-                          )
-                        ],
-                      ),
+                    const SliverToBoxAdapter(
+                      child: SellRadioWidget()
                     ),
                     SliverToBoxAdapter(
                       child: GestureDetector(
@@ -161,5 +122,3 @@ class SoldNotebookSellers extends StatelessWidget {
     );
   }
 }
-
-enum SingingCharacter { lafayette, jefferson }
