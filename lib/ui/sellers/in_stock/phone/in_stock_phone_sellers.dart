@@ -1,5 +1,6 @@
 import 'package:cycas/ui/sellers/sold/notebook/sold_notebook_sellers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class InStockPhoneSellers extends StatelessWidget {
   static const String routeName = "in_stock_phone_sellers";
@@ -64,136 +65,134 @@ class InStockPhoneSellers extends StatelessWidget {
                     shrinkWrap: true,
                     itemCount: 30,
                     itemBuilder: (context, position) {
-                      return Dismissible(
-                          background: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 16),
-                            alignment: Alignment.centerRight,
-                            color: const Color(0xffF25B63),
-                            child: const Icon(
-                              Icons.delete_outline,
-                              color: Colors.white,
-                            ),
+                      return Slidable(
+                          endActionPane: ActionPane(
+                            motion: const DrawerMotion(),
+                            extentRatio: 0.50,
+                            children: [
+                              SlidableAction(
+                                label: 'Archive',
+                                backgroundColor: Colors.blue,
+                                icon: Icons.archive,
+                                onPressed: (context) {},
+                              ),
+                              SlidableAction(
+                                label: 'Delete',
+                                backgroundColor: Colors.red,
+                                icon: Icons.delete,
+                                onPressed: (context) {},
+                              ),
+                            ],
                           ),
-                          direction: DismissDirection.endToStart,
-                          onDismissed: (direction) {
-                            Navigator.pushNamed(
-                                context, SoldNotebookSellers.routeName);
-                          },
-                          key: ValueKey(position),
                           child: Container(
                             color: (position % 2 == 0)
                                 ? const Color(0x40e9e9e9)
                                 : const Color(0xFFF2F2F2),
                             child: ExpansionTile(
-                                  children: [
-                                    Container(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Row(
-                                                children: [
-                                                  Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: const [
-                                                      Text(
-                                                          "Модель: Iphone 13 Pro Max",
-                                                          maxLines: 1,
-                                                          overflow: TextOverflow
-                                                              .ellipsis),
-                                                      Text("Приход: 140000 сом",
-                                                          maxLines: 1,
-                                                          overflow: TextOverflow
-                                                              .ellipsis),
-                                                      Text(
-                                                          "Продажа: 150000 сом",
-                                                          maxLines: 1,
-                                                          overflow: TextOverflow
-                                                              .ellipsis),
-                                                      Text(
-                                                          "Цена в рассрочку: 12000 сом",
-                                                          maxLines: 1,
-                                                          overflow: TextOverflow
-                                                              .ellipsis),
-                                                    ],
-                                                  )
-                                                ],
-                                              ),
-                                              Container(
-                                                  padding: const EdgeInsets
-                                                          .symmetric(
-                                                      horizontal: 8)),
-                                              Row(
-                                                children: [
-                                                  Column(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: const [
-                                                        Text(
-                                                            "S/N: 10010100110"),
-                                                        Text("Цвет: Синий"),
-                                                        Text("Память: 512 gb")
-                                                      ])
+                                              Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: const [
+                                                  Text(
+                                                      "Модель: Iphone 13 Pro Max",
+                                                      maxLines: 1,
+                                                      overflow: TextOverflow
+                                                          .ellipsis),
+                                                  Text("Приход: 140000 сом",
+                                                      maxLines: 1,
+                                                      overflow: TextOverflow
+                                                          .ellipsis),
+                                                  Text("Продажа: 150000 сом",
+                                                      maxLines: 1,
+                                                      overflow: TextOverflow
+                                                          .ellipsis),
+                                                  Text(
+                                                      "Цена в рассрочку: 12000 сом",
+                                                      maxLines: 1,
+                                                      overflow: TextOverflow
+                                                          .ellipsis),
                                                 ],
                                               )
                                             ],
                                           ),
+                                          Container(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 8)),
+                                          Row(
+                                            children: [
+                                              Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: const [
+                                                    Text("S/N: 10010100110"),
+                                                    Text("Цвет: Синий"),
+                                                    Text("Память: 512 gb")
+                                                  ])
+                                            ],
+                                          )
                                         ],
                                       ),
-                                      margin: const EdgeInsets.symmetric(
-                                          vertical: 18, horizontal: 18),
-                                    )
-                                  ],
-                                  title: Container(
-                                    margin: const EdgeInsets.symmetric(
-                                        horizontal: 8, vertical: 18),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                    ],
+                                  ),
+                                  margin: const EdgeInsets.symmetric(
+                                      vertical: 18, horizontal: 18),
+                                )
+                              ],
+                              title: Container(
+                                margin: const EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 18),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
                                       children: [
-                                        Row(
-                                          children: [
-                                            Text("$position",
-                                                style: const TextStyle(
-                                                    fontSize: 16,
-                                                    color: Colors.grey,
-                                                    fontWeight:
-                                                        FontWeight.bold)),
-                                            Container(
-                                              alignment: Alignment.centerLeft,
-                                              margin: const EdgeInsets.only(
-                                                  left: 12),
-                                              child: const Text(
-                                                "Iphone 13 Pro Max",
-                                                style: TextStyle(
-                                                    fontSize: 16.0,
-                                                    color: Colors.black),
-                                              ),
-                                            ),
-                                          ],
+                                        Text("$position",
+                                            style: const TextStyle(
+                                                fontSize: 16,
+                                                color: Colors.grey,
+                                                fontWeight: FontWeight.bold)),
+                                        Container(
+                                          alignment: Alignment.centerLeft,
+                                          margin:
+                                              const EdgeInsets.only(left: 12),
+                                          child: const Text(
+                                            "Iphone 13 Pro Max",
+                                            style: TextStyle(
+                                                fontSize: 16.0,
+                                                color: Colors.black),
+                                          ),
                                         ),
-                                        Row(
-                                          children: const [
-                                            Text(
-                                              "150000 cом",
-                                              style: TextStyle(
-                                                  fontSize: 16.0,
-                                                  color: Colors.black),
-                                            ),
-                                          ],
-                                        )
                                       ],
                                     ),
-                                  ),
+                                    Row(
+                                      children: const [
+                                        Text(
+                                          "150000 cом",
+                                          style: TextStyle(
+                                              fontSize: 16.0,
+                                              color: Colors.black),
+                                        ),
+                                      ],
+                                    )
+                                  ],
                                 ),
-                              ));
+                              ),
+                            ),
+                          ));
                     }),
               ),
             ),

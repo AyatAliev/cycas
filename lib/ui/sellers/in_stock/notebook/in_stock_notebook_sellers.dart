@@ -1,5 +1,5 @@
-import 'package:cycas/ui/sellers/sold/notebook/sold_notebook_sellers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class InStockNotebookSellers extends StatelessWidget {
   static const String routeName = "in_stock_notebook_sellers";
@@ -64,23 +64,26 @@ class InStockNotebookSellers extends StatelessWidget {
                     shrinkWrap: true,
                     itemCount: 30,
                     itemBuilder: (context, position) {
-                      return Dismissible(
-                        background: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                          alignment: Alignment.centerRight,
-                          color: const Color(0xffF25B63),
-                          child: const Icon(
-                            Icons.delete_outline,
-                            color: Colors.white,
+                      return Slidable(
+                          endActionPane: ActionPane(
+                            motion: const DrawerMotion(),
+                            extentRatio: 0.50,
+                            children: [
+                              SlidableAction(
+                                label: 'Archive',
+                                backgroundColor: Colors.blue,
+                                icon: Icons.archive,
+                                onPressed: (context) {},
+                              ),
+                              SlidableAction(
+                                label: 'Delete',
+                                backgroundColor: Colors.red,
+                                icon: Icons.delete,
+                                onPressed: (context) {},
+                              ),
+                            ],
                           ),
-                        ),
-                        direction: DismissDirection.endToStart,
-                        onDismissed: (direction) {
-                          Navigator.pushNamed(
-                              context, SoldNotebookSellers.routeName);
-                        },
-                        key: ValueKey(position),
-                        child: Container(
+                      child: Container(
                           color: (position % 2 == 0)
                               ? const Color(0x40e9e9e9)
                               : const Color(0xFFF2F2F2),

@@ -4,8 +4,8 @@ import 'package:cycas/ui/sellers/add/phone/add_phone_sellers.dart';
 import 'package:cycas/ui/sellers/in_stock/accessory/in_stock_accessory_sellers.dart';
 import 'package:cycas/ui/sellers/in_stock/phone/in_stock_phone_sellers.dart';
 import 'package:cycas/ui/sellers/sold/accessory_tables/sold_tables_accessory_sellers.dart';
+import 'package:cycas/ui/sellers/sold/notebook_tables/sold_tables_notebook_sellers.dart';
 import 'package:cycas/ui/sellers/sold/phone_tables/sold_tables_phone_sellers.dart';
-import 'package:cycas/ui/sellers/sold/tables_notebook/sold_tables_notebook_sellers.dart';
 import 'package:cycas/ui/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 
