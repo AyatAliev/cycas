@@ -129,18 +129,92 @@ class SoldNotebookSellers extends StatelessWidget {
       barrierLabel: "Barrier",
       barrierDismissible: true,
       barrierColor: Colors.black.withOpacity(0.5),
-      transitionDuration: const Duration(milliseconds: 700),
+      transitionDuration: const Duration(milliseconds: 450),
       context: context,
       pageBuilder: (_, __, ___) {
         return Align(
           alignment: Alignment.center,
           child: Container(
-            height: 300,
-            child: const SizedBox.expand(child: FlutterLogo()),
-            margin: const EdgeInsets.only(bottom: 50, left: 12, right: 12),
+            margin: const EdgeInsets.symmetric(horizontal: 24,vertical: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 24),
             decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(40),
+                color: const Color(0xFFF2F2F2),
+                borderRadius: BorderRadius.circular(8)
+            ),
+            child: Wrap(
+              children: [
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Material(
+                          color: Color(0xFFF2F2F2),
+                          child: Text("Smart Point",style: TextStyle(
+                            color: Color(0xFF2D9CDB),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500
+                          ),),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.all(4),
+                            decoration: const BoxDecoration(
+                              color: Color(0x409E9E9E),
+                                shape: BoxShape.circle
+                            ),
+                            child: const Icon(Icons.close),
+                          ),
+                        )
+                      ],
+                    ),
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      margin: const EdgeInsets.only(top: 12,bottom: 8),
+                      child: const Material(
+                        color: Color(0xFFF2F2F2),
+                        child: Text("Продано",style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w700
+                        )),
+                      ),
+                    ),
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      margin: const EdgeInsets.only(top: 8),
+                      child: const Material(
+                        color: Color(0xFFF2F2F2),
+                        child: Text("Asus VivoBook\n\n27,09,2021\n\n48000 сом",style: TextStyle(
+                          color: Color(0xFF707070),
+                            fontSize: 16,
+                          fontWeight: FontWeight.w400
+                        )),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 40),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: const Color(0xFF2D9CDB),
+                          borderRadius: BorderRadius.circular(4)
+                      ),
+                      child: const Material(
+                        color: Color(0xFF2D9CDB),
+                        child: Text("Готово",textAlign: TextAlign.center,style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w700
+                        )),
+                      ),
+                    )
+                  ],
+                ),
+              ],
             ),
           ),
         );
