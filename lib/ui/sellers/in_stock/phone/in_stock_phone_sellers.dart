@@ -71,16 +71,21 @@ class InStockPhoneSellers extends StatelessWidget {
                             extentRatio: 0.50,
                             children: [
                               SlidableAction(
-                                label: 'Archive',
+                                label: 'Продано',
                                 backgroundColor: Colors.blue,
-                                icon: Icons.archive,
-                                onPressed: (context) {},
+                                icon: Icons.sell,
+                                onPressed: (context) {
+                                  Navigator.pushNamed(
+                                      context, SoldNotebookSellers.routeName);
+                                },
                               ),
                               SlidableAction(
-                                label: 'Delete',
+                                label: 'Удалить',
                                 backgroundColor: Colors.red,
                                 icon: Icons.delete,
-                                onPressed: (context) {},
+                                onPressed: (context) {
+
+                                },
                               ),
                             ],
                           ),

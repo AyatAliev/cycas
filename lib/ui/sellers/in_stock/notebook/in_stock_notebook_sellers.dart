@@ -71,18 +71,20 @@ class InStockNotebookSellers extends StatelessWidget {
                             extentRatio: 0.50,
                             children: [
                               SlidableAction(
-                                label: 'Archive',
+                                label: 'Продано',
                                 backgroundColor: Colors.blue,
-                                icon: Icons.archive,
-                                onPressed: (context) {},
-                              ),
-                              SlidableAction(
-                                label: 'Delete',
-                                backgroundColor: Colors.red,
-                                icon: Icons.delete,
+                                icon: Icons.sell,
                                 onPressed: (context) {
                                   Navigator.pushNamed(
                                       context, SoldNotebookSellers.routeName);
+                                },
+                              ),
+                              SlidableAction(
+                                label: 'Удалить',
+                                backgroundColor: Colors.red,
+                                icon: Icons.delete,
+                                onPressed: (context) {
+
                                 },
                               ),
                             ],
