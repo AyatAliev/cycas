@@ -16,10 +16,7 @@ class InStockPhoneSellers extends StatelessWidget {
         elevation: 1.0,
         backgroundColor: const Color(0xFFFFFFFF),
         title: const Text("Smart Point",
-            style: TextStyle(
-                color: Color(0xFF424242),
-                fontSize: 16,
-                fontWeight: FontWeight.w500)),
+            style: TextStyle(color: Color(0xFF424242), fontSize: 16, fontWeight: FontWeight.w500)),
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context);
@@ -50,10 +47,7 @@ class InStockPhoneSellers extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 20),
             child: const Text(
               "Телефоны",
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xFF797979)),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: Color(0xFF797979)),
             ),
           ),
           Expanded(
@@ -75,110 +69,78 @@ class InStockPhoneSellers extends StatelessWidget {
                                 backgroundColor: Colors.blue,
                                 icon: Icons.sell,
                                 onPressed: (context) {
-                                  Navigator.pushNamed(
-                                      context, SoldNotebookSellers.routeName);
+                                  Navigator.pushNamed(context, SoldNotebookSellers.routeName);
                                 },
                               ),
                               SlidableAction(
                                 label: 'Удалить',
                                 backgroundColor: Colors.red,
                                 icon: Icons.delete,
-                                onPressed: (context) {
-
-                                },
+                                onPressed: (context) {},
                               ),
                             ],
                           ),
                           child: Container(
-                            color: (position % 2 == 0)
-                                ? const Color(0x40e9e9e9)
-                                : const Color(0xFFF2F2F2),
+                            color: (position % 2 == 0) ? const Color(0x40e9e9e9) : const Color(0xFFF2F2F2),
                             child: ExpansionTile(
                               children: [
                                 Container(
                                   child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
                                           Row(
                                             children: [
                                               Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
+                                                crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: const [
-                                                  Text(
-                                                      "Модель: Iphone 13 Pro Max",
-                                                      maxLines: 1,
-                                                      overflow: TextOverflow
-                                                          .ellipsis),
+                                                  Text("Модель: Iphone 13 Pro Max",
+                                                      maxLines: 1, overflow: TextOverflow.ellipsis),
                                                   Text("Приход: 140000 сом",
-                                                      maxLines: 1,
-                                                      overflow: TextOverflow
-                                                          .ellipsis),
+                                                      maxLines: 1, overflow: TextOverflow.ellipsis),
                                                   Text("Продажа: 150000 сом",
-                                                      maxLines: 1,
-                                                      overflow: TextOverflow
-                                                          .ellipsis),
-                                                  Text(
-                                                      "Цена в рассрочку: 12000 сом",
-                                                      maxLines: 1,
-                                                      overflow: TextOverflow
-                                                          .ellipsis),
+                                                      maxLines: 1, overflow: TextOverflow.ellipsis),
+                                                  Text("Цена в рассрочку: 12000 сом",
+                                                      maxLines: 1, overflow: TextOverflow.ellipsis),
                                                 ],
                                               )
                                             ],
                                           ),
-                                          Container(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 8)),
+                                          Container(padding: const EdgeInsets.symmetric(horizontal: 8)),
                                           Row(
                                             children: [
-                                              Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: const [
-                                                    Text("S/N: 10010100110"),
-                                                    Text("Цвет: Синий"),
-                                                    Text("Память: 512 gb")
-                                                  ])
+                                              Column(crossAxisAlignment: CrossAxisAlignment.start, children: const [
+                                                Text("S/N: 10010100110"),
+                                                Text("Цвет: Синий"),
+                                                Text("Память: 512 gb")
+                                              ])
                                             ],
                                           )
                                         ],
                                       ),
                                     ],
                                   ),
-                                  margin: const EdgeInsets.symmetric(
-                                      vertical: 18, horizontal: 18),
+                                  margin: const EdgeInsets.symmetric(vertical: 18, horizontal: 18),
                                 )
                               ],
                               title: Container(
-                                margin: const EdgeInsets.symmetric(
-                                    horizontal: 8, vertical: 18),
+                                margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 18),
                                 child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
                                       children: [
                                         Text("$position",
                                             style: const TextStyle(
-                                                fontSize: 16,
-                                                color: Colors.grey,
-                                                fontWeight: FontWeight.bold)),
+                                                fontSize: 16, color: Colors.grey, fontWeight: FontWeight.bold)),
                                         Container(
                                           alignment: Alignment.centerLeft,
-                                          margin:
-                                              const EdgeInsets.only(left: 12),
+                                          margin: const EdgeInsets.only(left: 12),
                                           child: const Text(
                                             "Iphone 13 Pro Max",
-                                            style: TextStyle(
-                                                fontSize: 16.0,
-                                                color: Colors.black),
+                                            style: TextStyle(fontSize: 16.0, color: Colors.black),
                                           ),
                                         ),
                                       ],
@@ -187,9 +149,7 @@ class InStockPhoneSellers extends StatelessWidget {
                                       children: const [
                                         Text(
                                           "150000 cом",
-                                          style: TextStyle(
-                                              fontSize: 16.0,
-                                              color: Colors.black),
+                                          style: TextStyle(fontSize: 16.0, color: Colors.black),
                                         ),
                                       ],
                                     )

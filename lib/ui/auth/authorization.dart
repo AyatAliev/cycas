@@ -1,6 +1,8 @@
+import 'package:cycas/ui/admin/main/admin_main.dart';
 import 'package:cycas/ui/sellers/main_sellers.dart';
 import 'package:cycas/ui/widget/custom_button.dart';
 import 'package:cycas/ui/widget/custom_text_field.dart';
+import 'package:cycas/ui/admin/main_admin_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'bloc/authorization_bloc.dart';
@@ -53,6 +55,8 @@ class Authorization extends StatelessWidget {
               onTap: () {
                 if (loginController.text == "ayat") {
                   Navigator.pushNamed(context, MainSellers.routeName);
+                } else if (loginController.text == "admin") {
+                  Navigator.pushNamed(context, MainAdminTabScreen.routeName);
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text("Не верный логин или пароль")));

@@ -1,3 +1,4 @@
+import 'package:cycas/ui/admin/main/admin_main.dart';
 import 'package:cycas/ui/auth/authorization.dart';
 import 'package:cycas/ui/sellers/add/accessory/add_phone_sellers.dart';
 import 'package:cycas/ui/sellers/add/notebook/add_notebook_sellers.dart';
@@ -10,6 +11,7 @@ import 'package:cycas/ui/sellers/sold/accessory_tables/sold_tables_accessory_sel
 import 'package:cycas/ui/sellers/sold/notebook/sold_notebook_sellers.dart';
 import 'package:cycas/ui/sellers/sold/notebook_tables/sold_tables_notebook_sellers.dart';
 import 'package:cycas/ui/sellers/sold/phone_tables/sold_tables_phone_sellers.dart';
+import 'package:cycas/ui/admin/main_admin_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -32,6 +34,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: Authorization.routeName,
       routes: {
+        //Sellers
         MainSellers.routeName: (BuildContext context) => const MainSellers(),
         InStockNotebookSellers.routeName: (BuildContext context) => const InStockNotebookSellers(),
         InStockPhoneSellers.routeName: (BuildContext context) => const InStockPhoneSellers(),
@@ -44,6 +47,9 @@ class MyApp extends StatelessWidget {
         AddPhoneSellers.routeName: (BuildContext context) => const AddPhoneSellers(),
         AddAccessorySellers.routeName: (BuildContext context) => const AddAccessorySellers(),
         SoldTablesAccessorySellers.routeName: (BuildContext context) => const SoldTablesAccessorySellers(),
+        // Admin
+        AdminMain.routeName: (BuildContext context) => const AdminMain(),
+        MainAdminTabScreen.routeName: (BuildContext context) => const MainAdminTabScreen(),
       },
     );
   }
