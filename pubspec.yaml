@@ -9,18 +9,28 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # Get Service Locator
   get_it: ^7.1.3
+  # RxDart
   rxdart: ^0.27.0
+  # Provider with bloc
   provider: ^6.0.1
+  # Icons
   cupertino_icons: ^1.0.2
+  # Svg Icons
+  flutter_svg: ^0.22.0
+  # Liable
   flutter_slidable: ^1.0.0-dev.9
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: ^2.1.4
-
   flutter_lints: ^1.0.0
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/image/

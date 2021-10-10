@@ -1,4 +1,6 @@
 import 'package:cycas/ui/admin/main/admin_main.dart';
+import 'package:cycas/ui/admin/reports/admin_reports.dart';
+import 'package:cycas/ui/admin/tables/admin_tables.dart';
 import 'package:cycas/ui/auth/authorization.dart';
 import 'package:cycas/ui/sellers/add/accessory/add_phone_sellers.dart';
 import 'package:cycas/ui/sellers/add/notebook/add_notebook_sellers.dart';
@@ -50,6 +52,8 @@ class MyApp extends StatelessWidget {
         // Admin
         AdminMain.routeName: (BuildContext context) => const AdminMain(),
         MainAdminTabScreen.routeName: (BuildContext context) => const MainAdminTabScreen(),
+        AdminTables.routeName: (BuildContext context) => const AdminTables(),
+        AdminReports.routeName: (BuildContext context) => const AdminReports(),
       },
     );
   }

@@ -1,4 +1,6 @@
 import 'package:cycas/ui/admin/main/admin_main.dart';
+import 'package:cycas/ui/admin/reports/admin_reports.dart';
+import 'package:cycas/ui/admin/tables/admin_tables.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +15,7 @@ class MainAdminTabScreen extends StatefulWidget {
 
 class _MainAdminTabScreenState extends State<MainAdminTabScreen> with TickerProviderStateMixin {
   late TabController controller;
-  List<Widget> tabBarViewItems = [const AdminMain(), const AdminMain(), const AdminMain(), const AdminMain()];
+  List<Widget> tabBarViewItems = [const AdminMain(), const AdminTables(), const AdminReports(), const AdminMain()];
 
   @override
   void initState() {
