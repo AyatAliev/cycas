@@ -31,11 +31,14 @@ class _SellRadioWidgetState extends State<SellRadioWidget> {
                       _character = value;
                     });
                   }),
-              const Text("Наличные",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16)),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _character = SingingCharacter.cash;
+                  });
+                },
+                child: const Text("Наличные"),
+              ),
             ],
           ),
         ),
@@ -49,11 +52,14 @@ class _SellRadioWidgetState extends State<SellRadioWidget> {
                     _character = value;
                   });
                 }),
-            const Text("Рассрочка",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16)),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  _character = SingingCharacter.installmentPlan;
+                });
+              },
+              child: const Text("Рассрочка"),
+            ),
           ],
         )
       ],
