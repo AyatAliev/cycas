@@ -8,8 +8,18 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController textController;
   final int maxLines;
   final bool passwordVisible;
+  final bool validate;
 
-  const CustomTextField({Key? key, required this.hintText, required this.inputType, required this.textController, this.passwordVisible = false, required this.inputAction, this.maxLines = 1}) : super(key: key);
+  const CustomTextField({
+    Key? key,
+    required this.hintText,
+    this.validate = false,
+    required this.inputType,
+    required this.textController,
+    this.passwordVisible = false,
+    required this.inputAction,
+    this.maxLines = 1,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +28,7 @@ class CustomTextField extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         alignment: Alignment.centerLeft,
         width: double.infinity,
-        margin: const EdgeInsets.symmetric(horizontal: 54,vertical: 9),
+        margin: const EdgeInsets.symmetric(horizontal: 54, vertical: 9),
         decoration: BoxDecoration(
           color: const Color(0x40e9e9e9),
           borderRadius: BorderRadius.circular(4),
@@ -29,12 +39,10 @@ class CustomTextField extends StatelessWidget {
           obscureText: passwordVisible,
           controller: textController,
           decoration: InputDecoration(
-            border: InputBorder.none,
-            labelText: hintText,
-            hintStyle: const TextStyle(
-              color: Color(0xFF707070)
-            )
-          ),
+              errorText: validate ? 'Заполните поле, пожалуйста' : null,
+              border: InputBorder.none,
+              labelText: hintText,
+              hintStyle: const TextStyle(color: Color(0xFF707070))),
           keyboardType: inputType,
           style: const TextStyle(
             color: Colors.black,

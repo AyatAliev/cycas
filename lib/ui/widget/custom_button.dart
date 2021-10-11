@@ -8,14 +8,19 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 16,horizontal: 40),
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 40),
       decoration: BoxDecoration(
         color: const Color(0xFF2D9CDB),
         borderRadius: BorderRadius.circular(4),
       ),
-      child: Text(text,
-          style: const TextStyle(
-              fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white)),
+      child: Text(
+        text,
+        style: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w500,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }

@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 
 class SoldNotebookSellers extends StatelessWidget {
   static const String routeName = "sold_notebook_sellers";
-
-  const SoldNotebookSellers({Key? key}) : super(key: key);
+  final _formkey = GlobalKey<FormState>();
+  SoldNotebookSellers({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -61,8 +61,9 @@ class SoldNotebookSellers extends StatelessWidget {
             child: Container(
               margin: const EdgeInsets.only(top: 40),
               child: SafeArea(
-                  bottom: true,
-                  child: CustomScrollView(slivers: [
+                bottom: true,
+                child: CustomScrollView(
+                  slivers: [
                     SliverToBoxAdapter(
                       child: Center(
                         child: Container(
@@ -95,14 +96,20 @@ class SoldNotebookSellers extends StatelessWidget {
                       ),
                     ),
                     SliverToBoxAdapter(
-                      child: CustomTextField(
-                          inputAction: TextInputAction.done,
-                          hintText: "Цена",
-                          inputType: TextInputType.number,
-                          textController: TextEditingController()),
+                      child: Form(
+                        key: _formkey,
+                        child: CustomTextField(
+                            // validate:(value){},
+                            // if (value.isEmpty){
+                            // return "blablalblablalblabl"}},
+                            inputAction: TextInputAction.done,
+                            hintText: "Цена",
+                            inputType: TextInputType.number,
+                            textController: TextEditingController()),
+                      ),
                     ),
                     const SliverToBoxAdapter(
-                      child: SellRadioWidget()
+                      child: SellRadioWidget(),
                     ),
                     SliverToBoxAdapter(
                       child: GestureDetector(
@@ -111,18 +118,41 @@ class SoldNotebookSellers extends StatelessWidget {
                         },
                         child: Center(
                           child: Container(
-                              padding: const EdgeInsets.only(top: 40),
-                              child: const CustomButton(text: "Далее")),
+                            padding: const EdgeInsets.only(
+                              top: 40,
+                            ),
+                            child: const CustomButton(
+                              text: "Далее",
+                            ),
+                          ),
                         ),
                       ),
-                    )
-                  ])),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
         ],
       ),
     );
   }
+
+  // void alertDialog(BuildContext context) {
+  //   Widget OnPositiveButton = TextButton(
+  //     onPressed: () {},
+  //     child: const Text('Da'),
+  //   );
+  //   Widget OnNiggativeButton = TextButton(
+  //     onPressed: () {},
+  //     child: const Text('Net'),
+  //   );
+  //   AlertDialog dialog = new AlertDialog(
+  //     actions: [OnNiggativeButton, OnPositiveButton],
+  //     title: const Text('Islam'),
+  //     content: const Text('Accept?'),
+  //   );
+  // }
 
   void showDialog(BuildContext context) {
     showGeneralDialog(
@@ -135,12 +165,11 @@ class SoldNotebookSellers extends StatelessWidget {
         return Align(
           alignment: Alignment.center,
           child: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 24,vertical: 24),
-            padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 24),
+            margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
             decoration: BoxDecoration(
                 color: const Color(0xFFF2F2F2),
-                borderRadius: BorderRadius.circular(8)
-            ),
+                borderRadius: BorderRadius.circular(8)),
             child: Wrap(
               children: [
                 Column(
@@ -150,11 +179,13 @@ class SoldNotebookSellers extends StatelessWidget {
                       children: [
                         const Material(
                           color: Color(0xFFF2F2F2),
-                          child: Text("Smart Point",style: TextStyle(
-                            color: Color(0xFF2D9CDB),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500
-                          ),),
+                          child: Text(
+                            "Smart Point",
+                            style: TextStyle(
+                                color: Color(0xFF2D9CDB),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          ),
                         ),
                         GestureDetector(
                           onTap: () {
@@ -163,9 +194,8 @@ class SoldNotebookSellers extends StatelessWidget {
                           child: Container(
                             padding: const EdgeInsets.all(4),
                             decoration: const BoxDecoration(
-                              color: Color(0x409E9E9E),
-                                shape: BoxShape.circle
-                            ),
+                                color: Color(0x409E9E9E),
+                                shape: BoxShape.circle),
                             child: const Icon(Icons.close),
                           ),
                         )
@@ -173,14 +203,14 @@ class SoldNotebookSellers extends StatelessWidget {
                     ),
                     Container(
                       alignment: Alignment.centerLeft,
-                      margin: const EdgeInsets.only(top: 12,bottom: 8),
+                      margin: const EdgeInsets.only(top: 12, bottom: 8),
                       child: const Material(
                         color: Color(0xFFF2F2F2),
-                        child: Text("Продано",style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700
-                        )),
+                        child: Text("Продано",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 24,
+                                fontWeight: FontWeight.w700)),
                       ),
                     ),
                     Container(
@@ -188,11 +218,11 @@ class SoldNotebookSellers extends StatelessWidget {
                       margin: const EdgeInsets.only(top: 8),
                       child: const Material(
                         color: Color(0xFFF2F2F2),
-                        child: Text("Asus VivoBook\n\n27,09,2021\n\n48000 сом",style: TextStyle(
-                          color: Color(0xFF707070),
-                            fontSize: 16,
-                          fontWeight: FontWeight.w400
-                        )),
+                        child: Text("Asus VivoBook\n\n27,09,2021\n\n48000 сом",
+                            style: TextStyle(
+                                color: Color(0xFF707070),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400)),
                       ),
                     ),
                     Container(
@@ -201,15 +231,15 @@ class SoldNotebookSellers extends StatelessWidget {
                       width: double.infinity,
                       decoration: BoxDecoration(
                           color: const Color(0xFF2D9CDB),
-                          borderRadius: BorderRadius.circular(4)
-                      ),
+                          borderRadius: BorderRadius.circular(4)),
                       child: const Material(
                         color: Color(0xFF2D9CDB),
-                        child: Text("Готово",textAlign: TextAlign.center,style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700
-                        )),
+                        child: Text("Готово",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 24,
+                                fontWeight: FontWeight.w700)),
                       ),
                     )
                   ],
@@ -221,7 +251,8 @@ class SoldNotebookSellers extends StatelessWidget {
       },
       transitionBuilder: (_, anim, __, child) {
         return SlideTransition(
-          position: Tween(begin: const Offset(0, 1), end: const Offset(0, 0)).animate(anim),
+          position: Tween(begin: const Offset(0, 1), end: const Offset(0, 0))
+              .animate(anim),
           child: child,
         );
       },

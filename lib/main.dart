@@ -33,17 +33,27 @@ class MyApp extends StatelessWidget {
       initialRoute: Authorization.routeName,
       routes: {
         MainSellers.routeName: (BuildContext context) => const MainSellers(),
-        InStockNotebookSellers.routeName: (BuildContext context) => const InStockNotebookSellers(),
-        InStockPhoneSellers.routeName: (BuildContext context) => const InStockPhoneSellers(),
-        InStockAccessorySellers.routeName: (BuildContext context) => const InStockAccessorySellers(),
+        InStockNotebookSellers.routeName: (BuildContext context) =>
+            const InStockNotebookSellers(),
+        InStockPhoneSellers.routeName: (BuildContext context) =>
+            const InStockPhoneSellers(),
+        InStockAccessorySellers.routeName: (BuildContext context) =>
+            const InStockAccessorySellers(),
         Authorization.routeName: (BuildContext context) => Authorization(),
-        AddNotebookSellers.routeName: (BuildContext context) => const AddNotebookSellers(),
-        SoldNotebookSellers.routeName: (BuildContext context) => const SoldNotebookSellers(),
-        SoldTablesPhoneSellers.routeName: (BuildContext context) => const SoldTablesPhoneSellers(),
-        SoldTablesNotebookSellers.routeName: (BuildContext context) => const SoldTablesNotebookSellers(),
-        AddPhoneSellers.routeName: (BuildContext context) => const AddPhoneSellers(),
-        AddAccessorySellers.routeName: (BuildContext context) => const AddAccessorySellers(),
-        SoldTablesAccessorySellers.routeName: (BuildContext context) => const SoldTablesAccessorySellers(),
+        AddNotebookSellers.routeName: (BuildContext context) =>
+            const AddNotebookSellers(),
+        SoldNotebookSellers.routeName: (BuildContext context) =>
+            SoldNotebookSellers(),
+        SoldTablesPhoneSellers.routeName: (BuildContext context) =>
+            const SoldTablesPhoneSellers(),
+        SoldTablesNotebookSellers.routeName: (BuildContext context) =>
+            const SoldTablesNotebookSellers(),
+        AddPhoneSellers.routeName: (BuildContext context) =>
+            const AddPhoneSellers(),
+        AddAccessorySellers.routeName: (BuildContext context) =>
+            const AddAccessorySellers(),
+        SoldTablesAccessorySellers.routeName: (BuildContext context) =>
+            const SoldTablesAccessorySellers(),
       },
     );
   }
