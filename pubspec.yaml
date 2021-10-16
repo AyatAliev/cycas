@@ -18,7 +18,7 @@ dependencies:
   # Icons
   cupertino_icons: ^1.0.2
   # Svg Icons
-  flutter_svg: ^0.22.0
+  flutter_svg: ^0.23.0+1
   # Liable
   flutter_slidable: ^1.0.0-dev.9
 

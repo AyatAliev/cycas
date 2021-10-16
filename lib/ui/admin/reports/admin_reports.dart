@@ -40,14 +40,21 @@ class AdminReports extends StatelessWidget {
                       children: [
                         Container(
                           margin: const EdgeInsets.only(left: 24),
-                          child: SvgPicture.asset("assets/image/folder.svg", color: const Color(0xFF2D9CDB)),
+                          child: SvgPicture.asset(
+                            "assets/image/folder.svg",
+                            color: const Color(0xFF2D9CDB),
+                          ),
                         ),
                         const Positioned(
                           top: 60,
                           left: 40,
                           child: Text(
                             "Smart Point",
-                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.white),
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                         const Positioned(
@@ -55,7 +62,11 @@ class AdminReports extends StatelessWidget {
                           left: 40,
                           child: Text(
                             "ГУМ",
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color(0xBFFFFFFF)),
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xBFFFFFFF),
+                            ),
                           ),
                         ),
                       ],

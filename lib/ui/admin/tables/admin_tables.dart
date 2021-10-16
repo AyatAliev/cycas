@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:cycas/ui/admin/tables/main/tables_main.dart';
 import 'package:cycas/ui/widget/statistics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -36,29 +37,35 @@ class AdminTables extends StatelessWidget {
                   shrinkWrap: true,
                   crossAxisCount: 2,
                   children: List.generate(10, (index) {
-                    return Stack(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(left: 24),
-                          child: SvgPicture.asset("assets/image/folder.svg", color: const Color(0xFF2D9CDB)),
-                        ),
-                        const Positioned(
-                          top: 60,
-                          left: 40,
-                          child: Text(
-                            "Notnik",
-                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.white),
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(
+                            context, TablesMain.routeName);
+                      },
+                      child: Stack(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(left: 24),
+                            child: SvgPicture.asset("assets/image/folder.svg", color: const Color(0xFF2D9CDB)),
                           ),
-                        ),
-                        const Positioned(
-                          top: 90,
-                          left: 40,
-                          child: Text(
-                            "ЦУМ",
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color(0xBFFFFFFF)),
+                          const Positioned(
+                            top: 60,
+                            left: 40,
+                            child: Text(
+                              "Notnik",
+                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.white),
+                            ),
                           ),
-                        ),
-                      ],
+                          const Positioned(
+                            top: 90,
+                            left: 40,
+                            child: Text(
+                              "ЦУМ",
+                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color(0xBFFFFFFF)),
+                            ),
+                          ),
+                        ],
+                      ),
                     );
                   }),
                 ),
