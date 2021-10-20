@@ -1,7 +1,10 @@
 import 'package:cycas/ui/admin/main/admin_main.dart';
 import 'package:cycas/ui/admin/reports/admin_reports.dart';
 import 'package:cycas/ui/admin/tables/admin_tables.dart';
-import 'package:cycas/ui/admin/tables/main/tables_main.dart';
+import 'package:cycas/ui/admin/tables/main/accessory/tables_accessory_admin.dart';
+import 'package:cycas/ui/admin/tables/main/notebook/tables_notebook_admin.dart';
+import 'package:cycas/ui/admin/tables/main/phone/tables_phone_admin.dart';
+import 'package:cycas/ui/admin/tables/main/tables_main_admin.dart';
 import 'package:cycas/ui/auth/authorization.dart';
 import 'package:cycas/ui/sellers/add/accessory/add_phone_sellers.dart';
 import 'package:cycas/ui/sellers/add/notebook/add_notebook_sellers.dart';
@@ -55,7 +58,10 @@ class MyApp extends StatelessWidget {
         MainAdminTabScreen.routeName: (BuildContext context) => const MainAdminTabScreen(),
         AdminTables.routeName: (BuildContext context) => const AdminTables(),
         AdminReports.routeName: (BuildContext context) => const AdminReports(),
-        TablesMain.routeName: (BuildContext context) => const TablesMain(),
+        TablesMainAdmin.routeName: (BuildContext context) => const TablesMainAdmin(),
+        TablesNotebookAdmin.routeName: (BuildContext context) => const TablesNotebookAdmin(),
+        TablesPhoneAdmin.routeName: (BuildContext context) => const TablesPhoneAdmin(),
+        TablesAccessoryAdmin.routeName: (BuildContext context) => const TablesAccessoryAdmin(),
       },
     );
   }

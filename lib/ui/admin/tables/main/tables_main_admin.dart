@@ -1,13 +1,13 @@
-import 'package:cycas/ui/sellers/sold/accessory_tables/sold_tables_accessory_sellers.dart';
-import 'package:cycas/ui/sellers/sold/notebook_tables/sold_tables_notebook_sellers.dart';
-import 'package:cycas/ui/sellers/sold/phone_tables/sold_tables_phone_sellers.dart';
+import 'package:cycas/ui/admin/tables/main/accessory/tables_accessory_admin.dart';
+import 'package:cycas/ui/admin/tables/main/notebook/tables_notebook_admin.dart';
+import 'package:cycas/ui/admin/tables/main/phone/tables_phone_admin.dart';
 import 'package:cycas/ui/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 
-class TablesMain extends StatelessWidget {
+class TablesMainAdmin extends StatelessWidget {
   static const String routeName = "tables_main";
 
-  const TablesMain({Key? key}) : super(key: key);
+  const TablesMainAdmin({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +45,19 @@ class TablesMain extends StatelessWidget {
                     color: const Color(0xffffffff),
                     child: Column(
                       children: [
-                        CustomText(text: "Ноутбуки", onTap: () {}),
-                        CustomText(text: "Телефоны", onTap: () {}),
-                        CustomText(text: "Акксесуары", onTap: () {}),
+                        CustomText(
+                            text: "Ноутбуки",
+                            onTap: () {
+                              Navigator.pushNamed(context, TablesNotebookAdmin.routeName);
+                            }),
+                        CustomText(
+                            text: "Телефоны",
+                            onTap: () {
+                              Navigator.pushNamed(context, TablesPhoneAdmin.routeName);
+                            }),
+                        CustomText(text: "Акксесуары", onTap: () {
+                          Navigator.pushNamed(context, TablesAccessoryAdmin.routeName);
+                        }),
                       ],
                     ),
                   )
@@ -71,17 +81,14 @@ class TablesMain extends StatelessWidget {
                             CustomText(
                                 text: "Ноутбуки",
                                 onTap: () {
-                                  Navigator.pushNamed(context, SoldTablesNotebookSellers.routeName);
                                 }),
                             CustomText(
                                 text: "Телефоны",
                                 onTap: () {
-                                  Navigator.pushNamed(context, SoldTablesPhoneSellers.routeName);
                                 }),
                             CustomText(
                                 text: "Акксесуары",
                                 onTap: () {
-                                  Navigator.pushNamed(context, SoldTablesAccessorySellers.routeName);
                                 }),
                           ],
                         ),

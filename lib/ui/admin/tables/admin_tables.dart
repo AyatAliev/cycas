@@ -1,7 +1,6 @@
 import 'dart:ui';
 
-import 'package:cycas/ui/admin/tables/main/tables_main.dart';
-import 'package:cycas/ui/widget/statistics.dart';
+import 'package:cycas/ui/admin/tables/main/tables_main_admin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -39,8 +38,7 @@ class AdminTables extends StatelessWidget {
                   children: List.generate(10, (index) {
                     return GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(
-                            context, TablesMain.routeName);
+                        Navigator.pushNamed(context, TablesMainAdmin.routeName);
                       },
                       child: Stack(
                         children: [
